@@ -1,0 +1,233 @@
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #28074a, #491088);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* APP CONTAINER */
+main {
+  width: 100%;
+  max-width: 600px;
+  padding: 1.2rem;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #bd4de5, #ff19db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SECTIONS */
+section {
+  background: linear-gradient(145deg, #491088, #28074a);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* SECTION HEADINGS */
+section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ff7f1a;
+}
+
+section h2 i {
+  color: #bd4de5;
+  font-size: 1.3rem;
+}
+
+/* BUTTONS */
+button {
+  background: linear-gradient(135deg, #6c1dd0, #bd4de5);
+  border: none;
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  margin: 0.3rem 0.2rem;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(108, 29, 208, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* BUTTON HOVER / ACTIVE */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 25, 219, 0.6);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* TEMPERATURE DISPLAY */
+#temperature {
+  text-align: center;
+}
+
+#temp-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0.6rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff19db;
+}
+
+/* ICONS INSIDE BUTTONS */
+button i {
+  font-size: 1rem;
+}
+
+/* TOGGLE CONTAINER */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* LABEL TEXT */
+.toggle-label {
+  font-size: 1rem;
+  color: #ff7f1a;
+}
+
+/* SWITCH WRAPPER */
+.switch {
+  position: relative;
+  width: 80px;
+  height: 40px;
+}
+
+/* HIDE DEFAULT CHECKBOX */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* SLIDER */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: linear-gradient(135deg, #28074a, #491088);
+  border-radius: 30px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease;
+}
+
+/* SLIDER CIRCLE */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  left: 4px;
+  top: 4px;
+  background: linear-gradient(135deg, #bd4de5, #6c1dd0);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(189, 77, 229, 0.8);
+  transition: transform 0.3s ease;
+}
+
+/* ON STATE */
+.switch input:checked + .slider {
+  background: linear-gradient(135deg, #6c1dd0, #ff19db);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(40px);
+  box-shadow: 0 0 14px rgba(255, 25, 219, 0.9);
+}
+
+/* MUSIC DISPLAY */
+#song-display {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #28074a, #491088);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* SONG NAME TEXT */
+#song-name {
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff19db, #ff7f1a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: capitalize;
+}
+
+/* DISC ICON */
+#song-display i {
+  color: #bd4de5;
+  animation: spin 3s linear infinite;
+}
+
+/* STOP SPIN WHEN NOT PLAYING */
+.paused i {
+  animation-play-state: paused;
+}
+
+/* CONTROLS */
+.music-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* SPIN ANIMATION */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* RESPONSIVE TOUCH TARGETS */
+/* @media (max-width: 480px) {
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+} */
